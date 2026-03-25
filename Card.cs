@@ -5,17 +5,17 @@ using System.Collections;
 [GlobalClass]
 public partial class Card : Resource
 {
-	[Export] public string Id { get; set; }
-    [Export] public string Suit { get; set; }
-	[Export] public string Name { get; set; }
-	[Export] public Godot.Collections.Array<int> EffectsId { get; set; }
+	[Export] public string Id { get; set; } = string.Empty;
+    [Export] public string Suit { get; set; } = string.Empty;
+    [Export] public string Name { get; set; } = string.Empty;
+    [Export] public Godot.Collections.Array<int> EffectsId { get; set; }
 	[Export] public Texture2D Img { get; set; }
-	[Export] public string Desc { get; set; } 
+	[Export] public string Desc { get; set; } = string.Empty;
 
-	public Card() 
+    public Card() 
 	{
 		this.Id = string.Empty;
-		this.Suit = string.Empty;
+        this.Suit = string.Empty;
 		this.Name = string.Empty;
 		this.EffectsId = new Godot.Collections.Array<int>();
 		this.Img = null;
