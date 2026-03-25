@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Collections;
 
 [GlobalClass]
 public partial class Card : Resource
@@ -51,7 +50,7 @@ public partial class Card : Resource
 
         /*
 		const int NoEffectId = 1;
-		
+		bool hasNoEffect = false;
 		if (!hasNoEffect)
 		{
 			var sb = new System.Text.StringBuilder();
@@ -69,7 +68,7 @@ public partial class Card : Resource
 			}
 
 			if (hasNoEffect && effects.Count > 1) 
-				trow new ArgumentException("CARD CAN'T HAVE NO EFFECT AND OTHER EFFECTS AT THE SAME TIME");
+				throw new ArgumentException("CARD CAN'T HAVE NO EFFECT AND OTHER EFFECTS AT THE SAME TIME");
 
 			Desc = sb.ToString();
 		}
