@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 
 [GlobalClass]
-public partial class Carta : Resource
+public partial class Card : Resource
 {
 	[Export] public string Id { get; set; }
     [Export] public string Suit { get; set; }
@@ -12,7 +12,7 @@ public partial class Carta : Resource
 	[Export] public Texture2D Img { get; set; }
 	[Export] public string Desc { get; set; } 
 
-	public Carta() 
+	public Card() 
 	{
 		this.Id = string.Empty;
 		this.Suit = string.Empty;
@@ -22,7 +22,7 @@ public partial class Carta : Resource
 		this.Desc = string.Empty;
     }
 
-	public Carta(string id, string name, string suit, Godot.Collections.Array<string> effects, Texture2D img)
+	public Card(string id, string name, string suit, Godot.Collections.Array<string> effects, Texture2D img)
 	{
         // Comprobamos que ningun parametro sea nulo o vacio
         // Si un parametro es nulo o vacio lanzamos una expecion personalalizada para depurar mas facilmente
