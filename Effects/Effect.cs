@@ -11,10 +11,16 @@ public abstract partial class Effect
 
 	public Effect(int id, string name, string desc)
 	{
-        if (id == 0) throw new ArgumentException("EFFECT ID CAN'T BE 0");
-        if (string.IsNullOrEmpty(name)) throw new ArgumentException("NULL EFFECT NAME");
-        if (string.IsNullOrEmpty(desc)) throw new ArgumentException("NULL EFFECT DESCRIPTION");
-        this.Id = id;
+		if (id == 0) 
+			throw new ArgumentException(GameConstants.ErrorMessages.EffectIdCannotBeZero);
+		
+		if (string.IsNullOrEmpty(name)) 
+			throw new ArgumentException(GameConstants.ErrorMessages.NullEffectName);
+
+		if (string.IsNullOrEmpty(desc)) 
+			throw new ArgumentException(GameConstants.ErrorMessages.NullEffectDescription);
+        
+		this.Id = id;
 		this.Name = name;
 		this.Desc = desc;
 	}

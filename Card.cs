@@ -26,11 +26,20 @@ public partial class Card : Resource
 	{
         // Comprobamos que ningun parametro sea nulo o vacio
         // Si un parametro es nulo o vacio lanzamos una expecion personalalizada para depurar mas facilmente
-		if (string.IsNullOrEmpty(id)) throw new ArgumentException("NULL CARD ID");
-		if (string.IsNullOrEmpty(name)) throw new ArgumentException("NULL CARD NAME");
-		if (string.IsNullOrEmpty(suit)) throw new ArgumentException("NULL CARD SUIT");
-		if (effects == null) throw new ArgumentException("NO CARD EFFECTS");
-		if (img == null) throw new ArgumentException("NO CARD IMG");
+		if (string.IsNullOrEmpty(id)) 
+			throw new ArgumentException(GameConstants.ErrorMessages.NullCardId);
+
+		if (string.IsNullOrEmpty(name)) 
+			throw new ArgumentException(GameConstants.ErrorMessages.NullCardName);
+
+		if (string.IsNullOrEmpty(suit)) 
+			throw new ArgumentException(GameConstants.ErrorMessages.NullCardSuit);
+
+		if (effects == null) 
+			throw new ArgumentException(GameConstants.ErrorMessages.NoCardEffects);
+
+		if (img == null) 
+			throw new ArgumentException(GameConstants.ErrorMessages.NoCardImg);
 
 		this.Id = id;
 		this.Name = name;
