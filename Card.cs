@@ -5,17 +5,17 @@ using System.Collections;
 [GlobalClass]
 public partial class Card : Resource
 {
-	[Export] public string Id { get; set; }
-    [Export] public string Suit { get; set; }
-	[Export] public string Name { get; set; }
-	[Export] public Godot.Collections.Array<int> EffectsId { get; set; }
+	[Export] public string Id { get; set; } = string.Empty;
+    [Export] public string Suit { get; set; } = string.Empty;
+    [Export] public string Name { get; set; } = string.Empty;
+    [Export] public Godot.Collections.Array<int> EffectsId { get; set; }
 	[Export] public Texture2D Img { get; set; }
-	[Export] public string Desc { get; set; } 
+	[Export] public string Desc { get; set; } = string.Empty;
 
-	public Card() 
+    public Card() 
 	{
 		this.Id = string.Empty;
-		this.Suit = string.Empty;
+        this.Suit = string.Empty;
 		this.Name = string.Empty;
 		this.EffectsId = new Godot.Collections.Array<int>();
 		this.Img = null;
@@ -37,6 +37,34 @@ public partial class Card : Resource
 		this.Suit = suit;
 		this.EffectsId = effects;
 		this.Img = img;
+
+
+
+        /*
+		const int NoEffectId = 1;
+		
+		if (!hasNoEffect)
+		{
+			var sb = new System.Text.StringBuilder();
+			for (int i = 0; i < effects.Count; i++)
+			{
+				if (effects[i] == NoEffectId) 
+				{
+					hasNoEffect = true;
+					break;
+				 }
+
+				var effectDesc = EffectDictionary.GetEffectById(effects[i])?.Desc;
+				if (!string.IsNullOrWhiteSpace(effectDesc))
+					sb.Append(" - ").Append(effectDesc).AppendLine();
+			}
+
+			if (hasNoEffect && effects.Count > 1) 
+				trow new ArgumentException("CARD CAN'T HAVE NO EFFECT AND OTHER EFFECTS AT THE SAME TIME");
+
+			Desc = sb.ToString();
+		}
+		*/
 
     }
 
