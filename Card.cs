@@ -22,7 +22,7 @@ public partial class Card : Resource
 		this.Desc = string.Empty;
     }
 
-	public Card(string id, string name, string suit, Godot.Collections.Array<string> effects, Texture2D img)
+	public Card(string id, string name, string suit, Godot.Collections.Array<int> effects, Texture2D img)
 	{
         // Comprobamos que ningun parametro sea nulo o vacio
         // Si un parametro es nulo o vacio lanzamos una expecion personalalizada para depurar mas facilmente
@@ -31,6 +31,13 @@ public partial class Card : Resource
 		if (string.IsNullOrEmpty(suit)) throw new ArgumentException("NULL CARD SUIT");
 		if (effects == null) throw new ArgumentException("NO CARD EFFECTS");
 		if (img == null) throw new ArgumentException("NO CARD IMG");
+
+		this.Id = id;
+		this.Name = name;
+		this.Suit = suit;
+		this.EffectsId = effects;
+		this.Img = img;
+
     }
 
     public int GetValor() 
