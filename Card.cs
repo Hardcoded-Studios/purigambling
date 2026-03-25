@@ -38,6 +38,34 @@ public partial class Card : Resource
 		this.EffectsId = effects;
 		this.Img = img;
 
+
+
+        /*
+		const int NoEffectId = 1;
+		
+		if (!hasNoEffect)
+		{
+			var sb = new System.Text.StringBuilder();
+			for (int i = 0; i < effects.Count; i++)
+			{
+				if (effects[i] == NoEffectId) 
+				{
+					hasNoEffect = true;
+					break;
+				 }
+
+				var effectDesc = EffectDictionary.GetEffectById(effects[i])?.Desc;
+				if (!string.IsNullOrWhiteSpace(effectDesc))
+					sb.Append(" - ").Append(effectDesc).AppendLine();
+			}
+
+			if (hasNoEffect && effects.Count > 1) 
+				trow new ArgumentException("CARD CAN'T HAVE NO EFFECT AND OTHER EFFECTS AT THE SAME TIME");
+
+			Desc = sb.ToString();
+		}
+		*/
+
     }
 
     public int GetValor() 
