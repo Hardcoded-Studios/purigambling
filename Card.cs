@@ -4,22 +4,12 @@ using System;
 [GlobalClass]
 public partial class Card : Resource
 {
-	[Export] public string Id { get; set; } = string.Empty;
-    [Export] public string Suit { get; set; } = string.Empty;
-    [Export] public string Name { get; set; } = string.Empty;
-    [Export] public Godot.Collections.Array<int> EffectsId { get; set; }
-	[Export] public Texture2D Img { get; set; }
-	[Export] public string Desc { get; set; } = string.Empty;
-
-    public Card() 
-	{
-		this.Id = string.Empty;
-        this.Suit = string.Empty;
-		this.Name = string.Empty;
-		this.EffectsId = new Godot.Collections.Array<int>();
-		this.Img = null;
-		this.Desc = string.Empty;
-    }
+	[Export] public string Id { get; private set; } = string.Empty;
+    [Export] public string Suit { get; private set; } = string.Empty;
+    [Export] public string Name { get; private set; } = string.Empty;
+    [Export] public Godot.Collections.Array<int> EffectsId { get; private set; }
+	[Export] public Texture2D Img { get; private set; }
+	[Export] public string Desc { get; private set; } = string.Empty;
 
 	public Card(string id, string name, string suit, Godot.Collections.Array<int> effects, Texture2D img)
 	{
@@ -34,7 +24,7 @@ public partial class Card : Resource
 		if (string.IsNullOrEmpty(suit)) 
 			throw new ArgumentException(GameConstants.ErrorMessages.NullCardSuit);
 
-		if (effects == null) 
+		if (effects == null || effects.Count == 0) 
 			throw new ArgumentException(GameConstants.ErrorMessages.NoCardEffects);
 
 		if (img == null) 
