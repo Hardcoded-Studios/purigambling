@@ -3,11 +3,14 @@ using System;
 
 public abstract partial class Effect : Resource
 {
-	[Export] public int Id { get; private set; } //Serán potencias de 2 para facilitar el diccionario de sinergias
+    //Serán potencias de 2 para facilitar el diccionario de sinergias
+    [Export] public int Id { get; private set; } = 0;
 	[Export] public string Name { get; private set; } = string.Empty;
 	[Export] public string Desc { get; private set; } = string.Empty;
 
-	public Effect(int id, string name, string desc)
+	public Effect() { }
+
+    public Effect(int id, string name, string desc)
 	{
 		if (id == 0) 
 			throw new ArgumentException(GameConstants.ErrorMessages.EffectIdCannotBeZero);
