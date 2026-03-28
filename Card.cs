@@ -4,14 +4,16 @@ using System;
 [GlobalClass]
 public partial class Card : Resource
 {
-	[Export] public string Id { get; private set; } = string.Empty;
-    [Export] public string Suit { get; private set; } = string.Empty;
-    [Export] public string Name { get; private set; } = string.Empty;
-    [Export] public Godot.Collections.Array<int> EffectsId { get; private set; }
-	[Export] public Texture2D Img { get; private set; }
+ [Export] public string Id { get; private set; } = string.Empty;
+	[Export] public string Suit { get; private set; } = string.Empty;
+	[Export] public string Name { get; private set; } = string.Empty;
+	[Export] public Godot.Collections.Array<int> EffectsId { get; private set; } = new Godot.Collections.Array<int>();
+	[Export] public Texture2D Img { get; private set; } = null!;
 	[Export] public string Desc { get; private set; } = string.Empty;
 
-	public Card(string id, string name, string suit, Godot.Collections.Array<int> effects, Texture2D img)
+	public Card() { }
+
+    public Card(string id, string name, string suit, Godot.Collections.Array<int> effects, Texture2D img)
 	{
         // Comprobamos que ningun parametro sea nulo o vacio
         // Si un parametro es nulo o vacio lanzamos una expecion personalalizada para depurar mas facilmente
