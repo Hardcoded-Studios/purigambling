@@ -3,11 +3,9 @@ using System;
 
 public abstract partial class Effect : Resource
 {
-	[Export] public int Id { get; protected set; } //Serán potencias de 2 para facilitar el diccionario de sinergias
-	[Export] public string Name { get; protected set; } = string.Empty;
-	[Export] public string Desc { get; protected set; } = string.Empty;
-
-    public Effect() { }
+	[Export] public int Id { get; private set; } //Serán potencias de 2 para facilitar el diccionario de sinergias
+	[Export] public string Name { get; private set; } = string.Empty;
+	[Export] public string Desc { get; private set; } = string.Empty;
 
 	public Effect(int id, string name, string desc)
 	{
