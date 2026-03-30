@@ -1,9 +1,14 @@
+using System.Runtime.InteropServices;
+
 public static class GameConstants
 {
 	public static class Effect
 	{
-		//NoEffect
-		public const int NoEffectId = 1;
+		//EffectCatalog
+		public const int nEffects = 1;
+
+        //NoEffect
+        public const int NoEffectId = 1;
 		public const string NoEffectName = "No Effect";
 		public const string NoEffectDescription = "This card has no special effect.";
 
@@ -25,5 +30,7 @@ public static class GameConstants
         public const string EffectIdCannotBeZero = "EFFECT ID CAN'T BE 0";
         public const string NullEffectName = "NULL EFFECT NAME";
         public const string NullEffectDescription = "NULL EFFECT DESCRIPTION";
+        public const string InvalidIdEffect = "INVALID EFFECT ID {0}";
     }
+
 }
