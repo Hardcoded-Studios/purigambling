@@ -1,11 +1,9 @@
-using System.Runtime.InteropServices;
-
 public static class GameConstants
 {
 	public static class Effect
 	{
 		//EffectCatalog
-		public const int nEffects = 1;
+		public const int EffectCount = 1;
 
         //NoEffect
         public const int NoEffectId = 1;
@@ -30,7 +28,7 @@ public static class GameConstants
         public const string EffectIdCannotBeZero = "EFFECT ID CAN'T BE 0";
         public const string NullEffectName = "NULL EFFECT NAME";
         public const string NullEffectDescription = "NULL EFFECT DESCRIPTION";
-        public const string InvalidIdEffect = "INVALID EFFECT ID {0}";
+        public const string InvalidEffectId = "INVALID EFFECT ID {0}";
     }
 
 }
